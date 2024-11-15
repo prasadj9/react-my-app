@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import ComponentA from './components/ComponentA';
+import ConditionalRender from './components/ConditionalRender';
+import HandleEvents from './components/HandleEvents';
+import {Route, Routes} from "react-router-dom"
+import Navbar from './components/Navbar';
+import CallExpandable from './components/CallExpandable';
+import RandomColorGeneraor from './components/RandomColorGeneraor';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      {/* <ComponentA/>
+      <ConditionalRender/>
+      <HandleEvents/> */}
+      <Routes>
+        <Route path='/' Component={ComponentA} />
+        <Route path='/switch' Component={ConditionalRender} />
+        <Route path='/event' Component={HandleEvents} />
+        <Route path='/expandabletext' Component={CallExpandable} />
+        <Route path='/randomcolor' Component={RandomColorGeneraor} />
+      </Routes>
     </div>
   );
 }
