@@ -1,8 +1,8 @@
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import React, { useState } from "react";
 
 const RandomColorGeneraor = () => {
-  const [color, setColor] = useState("white");
+  const [color, setColor] = useState("#FFFFFF");
   const getRandomColor = () => {
     const hexChars = "0123456789ABCDEF";
     let color = "#";
@@ -17,19 +17,23 @@ const RandomColorGeneraor = () => {
     setColor(newColor);
   };
   return (
-    <>
-      <div style={{ backgroundColor: color, height: "90vh", margin: "0" }}>
-        <center>
-
+      <Box
+        sx={{
+          backgroundColor: color,
+          height: "calc(100vh - 20px)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "20px",
+          flexDirection: "column"
+        }}
+      >
         <h1>RandomColorGeneraor</h1>
-
         <h3>Color : {color}</h3>
         <Button variant="contained" onClick={handleClick}>
           Generate random color
         </Button>
-        </center>
-      </div>
-    </>
+      </Box>
   );
 };
 
