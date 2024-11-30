@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import StopWatch from "./StopWatch";
 
 /*
 useRef is a React Hook that lets you reference a value that’s not needed for rendering.
@@ -28,12 +29,11 @@ const RefExample = () => {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-          gap: "50px",
+          gap: 2,
           height: "100%",
           marginTop : "20px"
         }}
       >
-        <Typography variant="h2"> RefExample </Typography>
         <Stack direction="row">
         <TextField
           label="name"
@@ -44,10 +44,11 @@ const RefExample = () => {
           />
         <Button variant="contained" onClick={handleFocus}>Focus</Button>
           </Stack>
-        <Typography variant="h3"> My name is : {name} </Typography>
+        <Typography variant="h5"> My name is : {name} </Typography>
         <Typography variant="h5" gutterBottom>
           Component rendered {rendercount.current} times{" "}
         </Typography>
+        <StopWatch/>
       </Box>
     </>
   );
